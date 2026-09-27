@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment - CarePlus Clinic</title>
+    <link rel="stylesheet" href="payment.css">
+</head>
+
+<body>
+
+<div class="page">
+
+<header>
+    <div class="brand">
+        <div class="logo">⚕</div>
+        <div>
+            <h1>CarePlus Clinic</h1>
+            <p>Clinic Appointment Booking System</p>
+        </div>
+    </div>
+
+    <div class="step">Step 4 of 5</div>
+</header>
+
+<div class="progress">
+    <div class="done">✓<span>Patient</span></div>
+    <div class="done">✓<span>Doctor</span></div>
+    <div class="done">✓<span>Appointment</span></div>
+    <div class="active">4<span>Payment</span></div>
+    <div>5<span>Dashboard</span></div>
+</div>
+
+<main class="card">
+
+    <h2>Payment</h2>
+
+    <p class="description">
+        Complete the payment to confirm your appointment.
+    </p>
+
+    <div class="summary">
+
+        <h3>Appointment Summary</h3>
+
+        <p>
+            Doctor:
+            <strong id="doctor"></strong>
+        </p>
+
+        <p>
+            Date:
+            <strong id="date"></strong>
+        </p>
+
+        <p>
+            Time:
+            <strong id="time"></strong>
+        </p>
+
+        <div class="amount">
+            Consultation Fee:
+            <strong>₹<span id="fee"></span></strong>
+        </div>
+
+    </div>
+
+    <h3>Choose Payment Method</h3>
+
+    <div class="payment-methods">
+
+        <label>
+            <input type="radio" name="payment" value="UPI">
+            UPI
+        </label>
+
+        <label>
+            <input type="radio" name="payment" value="Card">
+            Credit / Debit Card
+        </label>
+
+        <label>
+            <input type="radio" name="payment" value="Cash">
+            Pay at Clinic
+        </label>
+
+    </div>
+
+    <div class="actions">
+        <button onclick="makePayment()">
+            Pay & Confirm Appointment
+        </button>
+    </div>
+
+</main>
+
+<footer>
+    © 2026 CarePlus Clinic
+</footer>
+
+</div>
+
+<script>
+
+document.getElementById("doctor").innerText =
+    localStorage.getItem("doctorName");
+
+document.getElementById("date").innerText =
+    localStorage.getItem("appointmentDate");
+
+document.getElementById("time").innerText =
+    localStorage.getItem("appointmentTime");
+
+document.getElementById("fee").innerText =
+    localStorage.getItem("fee");
+
+
+async function makePayment() {
+
+    const payment =
+        document.querySelector('input[name="payment"]:checked');
+
+    if (!payment) {
+        alert("Please select a payment method.");
+        return;
+    }
+
+    try {
+
+        const response = await fetch("http://localhost:3000/payment", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                doctor: localStorage.getItem("doctorName"),
+                amount: localStorage.getItem("fee"),
+                paymentMethod: payment.value
+            })
+        });
+
+        const data = await response.json();
+
+        localStorage.setItem("paymentMethod", payment.value);
+        localStorage.setItem("paymentStatus", "Paid");
+
+        alert(data.message);
+
+        window.location.href = "dashboard.html";
+
+    } catch (error) {
+
+        alert("Backend connection failed.");
+
+        console.log(error);
+    }
+}
+
+</script>
+
+</body>
+</html>

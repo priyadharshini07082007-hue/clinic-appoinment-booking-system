@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #eaf6f6;
+}
+
+.container {
+    width: 900px;
+    min-height: 550px;
+    margin: 70px auto;
+    display: flex;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+/* Left side */
+
+.clinic-info {
+    width: 50%;
+    background: #087f8c;
+    color: white;
+    padding: 60px 45px;
+}
+
+.logo {
+    width: 65px;
+    height: 65px;
+    background: white;
+    color: #087f8c;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    margin-bottom: 25px;
+}
+
+.clinic-info h1 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.clinic-info > p {
+    font-size: 18px;
+}
+
+.clinic-text {
+    margin-top: 50px;
+    line-height: 2;
+    font-size: 16px;
+}
+
+/* Login side */
+
+.login-card {
+    width: 50%;
+    padding: 60px 50px;
+}
+
+.login-card h2 {
+    font-size: 30px;
+    color: #174a5b;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #777;
+    margin-bottom: 35px;
+}
+
+label {
+    display: block;
+    margin-top: 18px;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #087f8c;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 30px;
+    border: none;
+    border-radius: 8px;
+    background: #087f8c;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #05636d;
+}
+
+.bottom-text {
+    text-align: center;
+    margin-top: 25px;
+    color: #888;
+    font-size: 13px;
+}

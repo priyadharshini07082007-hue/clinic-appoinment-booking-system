@@ -1,0 +1,202 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #eef8f8;
+    color: #263238;
+}
+
+.page {
+    width: 90%;
+    max-width: 1100px;
+    margin: 35px auto;
+}
+
+/* HEADER */
+
+header {
+    background: #087f8c;
+    color: white;
+    padding: 22px 30px;
+    border-radius: 15px 15px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: white;
+    color: #087f8c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
+
+.brand h1 {
+    margin: 0;
+    font-size: 27px;
+}
+
+.brand p {
+    margin: 5px 0 0;
+    opacity: 0.9;
+}
+
+.step {
+    background: white;
+    color: #087f8c;
+    padding: 10px 18px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+/* PROGRESS */
+
+.progress {
+    background: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 18px;
+    border-bottom: 1px solid #ddd;
+}
+
+.progress div {
+    text-align: center;
+    color: #aaa;
+    font-weight: bold;
+}
+
+.progress .active {
+    color: #087f8c;
+}
+
+.progress span {
+    font-size: 12px;
+}
+
+/* CARD */
+
+.card {
+    background: white;
+    padding: 35px 45px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.10);
+}
+
+.card h2 {
+    margin: 0;
+    color: #174a5b;
+    font-size: 27px;
+}
+
+.description {
+    color: #777;
+    margin-bottom: 30px;
+}
+
+/* FORM */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px 30px;
+}
+
+.field label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ccd5d8;
+    border-radius: 8px;
+    font-size: 15px;
+    background: white;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #087f8c;
+}
+
+.address {
+    margin-top: 22px;
+}
+
+textarea {
+    height: 90px;
+    resize: none;
+}
+
+/* BUTTON */
+
+.actions {
+    text-align: right;
+    margin-top: 30px;
+}
+
+.next-btn {
+    background: #087f8c;
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.next-btn:hover {
+    background: #05636d;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #777;
+    font-size: 13px;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .brand {
+        flex-direction: column;
+    }
+
+    .page {
+        width: 95%;
+    }
+}

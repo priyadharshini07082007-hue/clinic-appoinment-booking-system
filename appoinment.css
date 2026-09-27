@@ -1,0 +1,315 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #eef8f9;
+    color: #164b68;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    min-height: 100vh;
+    background: white;
+}
+
+/* ================= HEADER ================= */
+
+.header {
+    background: #078899;
+    color: white;
+
+    padding: 25px 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.logo {
+    width: 65px;
+    height: 65px;
+
+    background: white;
+    color: #078899;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 32px;
+}
+
+.logo-text h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+.logo-text p {
+    margin: 5px 0 0;
+    font-size: 19px;
+}
+
+.step-badge {
+    background: white;
+    color: #078899;
+
+    padding: 14px 28px;
+
+    border-radius: 30px;
+
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* ================= PROGRESS STEPS ================= */
+
+.steps {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    padding: 25px 35px;
+
+    background: white;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.step {
+    text-align: center;
+
+    color: #aaa;
+
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.step-number {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.step.completed,
+.step.active {
+    color: #078899;
+}
+
+/* ================= CONTENT ================= */
+
+.content {
+    padding: 70px 60px;
+}
+
+.content h2 {
+    margin: 0 0 15px;
+
+    font-size: 34px;
+
+    color: #164b68;
+}
+
+.subtitle {
+    margin: 0 0 40px;
+
+    color: #777;
+
+    font-size: 19px;
+}
+
+/* ================= APPOINTMENT CARD ================= */
+
+.appointment-card {
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    border: 1px solid #d7e4e7;
+
+    border-radius: 15px;
+
+    padding: 40px;
+
+    background: white;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.05);
+}
+
+/* ================= FORM ================= */
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    color: #164b68;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    padding: 14px;
+
+    border: 1px solid #ccdadd;
+
+    border-radius: 8px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 16px;
+
+    color: #333;
+
+    background: white;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+
+    border-color: #078899;
+
+    box-shadow: 0 0 0 2px rgba(7, 136, 153, 0.1);
+}
+
+.form-group textarea {
+    min-height: 120px;
+
+    resize: vertical;
+}
+
+/* ================= BACK BUTTON ================= */
+
+.back-link {
+    display: inline-block;
+
+    margin-top: 5px;
+
+    color: #078899;
+
+    text-decoration: none;
+
+    font-size: 17px;
+
+    font-weight: bold;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* ================= PAYMENT BUTTON ================= */
+
+.continue-btn {
+    width: 100%;
+
+    margin-top: 30px;
+
+    padding: 16px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #078899;
+
+    color: white;
+
+    font-size: 19px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.continue-btn:hover {
+    background: #067684;
+
+    transform: translateY(-1px);
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 900px) {
+
+    .header {
+        padding: 20px;
+    }
+
+    .content {
+        padding: 45px 25px;
+    }
+
+    .appointment-card {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+    }
+
+    .logo-text h1 {
+        font-size: 26px;
+    }
+
+    .logo-text p {
+        font-size: 15px;
+    }
+
+    .step-badge {
+        padding: 10px 18px;
+
+        font-size: 14px;
+    }
+
+    .steps {
+        padding: 20px 5px;
+    }
+
+    .step {
+        font-size: 12px;
+    }
+
+    .step-number {
+        font-size: 17px;
+    }
+
+    .content h2 {
+        font-size: 28px;
+    }
+
+    .appointment-card {
+        padding: 22px;
+    }
+}

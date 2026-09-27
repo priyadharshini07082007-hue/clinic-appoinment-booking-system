@@ -1,0 +1,154 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #eef8f8;
+}
+
+.page {
+    width: 90%;
+    max-width: 1000px;
+    margin: 35px auto;
+}
+
+header {
+    background: #087f8c;
+    color: white;
+    padding: 22px 30px;
+    border-radius: 15px 15px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 55px;
+    height: 55px;
+    background: white;
+    color: #087f8c;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+.brand h1 {
+    margin: 0;
+}
+
+.brand p {
+    margin: 5px 0;
+}
+
+.step {
+    background: white;
+    color: #087f8c;
+    padding: 10px 18px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.progress {
+    background: white;
+    padding: 18px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.progress div {
+    text-align: center;
+    color: #aaa;
+    font-weight: bold;
+}
+
+.progress span {
+    display: block;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.progress .active,
+.progress .done {
+    color: #087f8c;
+}
+
+.card {
+    background: white;
+    padding: 40px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.1);
+}
+
+.card h2 {
+    color: #174a5b;
+}
+
+.description {
+    color: #777;
+}
+
+.summary {
+    background: #eef8f8;
+    padding: 25px;
+    border-radius: 10px;
+    margin: 25px 0;
+}
+
+.summary h3 {
+    color: #087f8c;
+}
+
+.amount {
+    border-top: 1px solid #ccc;
+    margin-top: 15px;
+    padding-top: 15px;
+    font-size: 18px;
+}
+
+.payment-methods {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.payment-methods label {
+    border: 1px solid #ccc;
+    padding: 18px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.payment-methods label:hover {
+    border-color: #087f8c;
+}
+
+.actions {
+    margin-top: 30px;
+    text-align: right;
+}
+
+button {
+    padding: 14px 25px;
+    background: #087f8c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #777;
+}

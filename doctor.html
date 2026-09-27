@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Doctor Selection - CarePlus Clinic</title>
+    <link rel="stylesheet" href="doctor.css">
+</head>
+
+<body>
+
+<div class="page">
+
+    <header>
+        <div class="brand">
+            <div class="logo">⚕</div>
+            <div>
+                <h1>CarePlus Clinic</h1>
+                <p>Clinic Appointment Booking System</p>
+            </div>
+        </div>
+
+        <div class="step">Step 2 of 5</div>
+    </header>
+
+    <div class="progress">
+        <div class="done">✓<span>Patient</span></div>
+        <div class="active">2<span>Doctor</span></div>
+        <div>3<span>Appointment</span></div>
+        <div>4<span>Payment</span></div>
+        <div>5<span>Dashboard</span></div>
+    </div>
+
+    <main class="card">
+
+        <h2>Select Your Doctor</h2>
+        <p class="description">
+            Choose a doctor based on specialization and availability.
+        </p>
+
+        <div class="doctors">
+
+            <div class="doctor-card">
+                <div class="doctor-icon">👨‍⚕️</div>
+                <h3>Dr. Arun Kumar</h3>
+                <p class="specialization">Cardiologist</p>
+                <p>Experience: 10 Years</p>
+                <p>Consultation: ₹500</p>
+                <p>Available: 10 AM - 1 PM</p>
+
+                <button onclick="selectDoctor('Dr. Arun Kumar','Cardiologist',500)">
+                    Select Doctor
+                </button>
+            </div>
+
+            <div class="doctor-card">
+                <div class="doctor-icon">👩‍⚕️</div>
+                <h3>Dr. Priya Sharma</h3>
+                <p class="specialization">Dermatologist</p>
+                <p>Experience: 8 Years</p>
+                <p>Consultation: ₹400</p>
+                <p>Available: 2 PM - 5 PM</p>
+
+                <button onclick="selectDoctor('Dr. Priya Sharma','Dermatologist',400)">
+                    Select Doctor
+                </button>
+            </div>
+
+            <div class="doctor-card">
+                <div class="doctor-icon">👨‍⚕️</div>
+                <h3>Dr. Rahul</h3>
+                <p class="specialization">General Medicine</p>
+                <p>Experience: 12 Years</p>
+                <p>Consultation: ₹300</p>
+                <p>Available: 9 AM - 12 PM</p>
+
+                <button onclick="selectDoctor('Dr. Rahul','General Medicine',300)">
+                    Select Doctor
+                </button>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        © 2026 CarePlus Clinic
+    </footer>
+
+</div>
+
+<script>
+
+async function selectDoctor(name, specialization, fee) {
+
+    try {
+
+        const response = await fetch("http://localhost:3000/doctor", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                doctorName: name,
+                specialization: specialization,
+                consultationFee: fee
+            })
+        });
+
+        const data = await response.json();
+
+        localStorage.setItem("doctorName", name);
+        localStorage.setItem("specialization", specialization);
+        localStorage.setItem("fee", fee);
+
+        alert(data.message);
+
+        window.location.href = "appointment.html";
+
+    } catch (error) {
+
+        alert("Backend connection failed.");
+
+        console.log(error);
+    }
+}
+
+</script>
+
+</body>
+</html>

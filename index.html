@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clinic Appointment System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="clinic-info">
+        <div class="logo">⚕</div>
+
+        <h1>CarePlus Clinic</h1>
+
+        <p>Your Health, Our Priority</p>
+
+        <div class="clinic-text">
+            <p>🩺 Qualified Doctors</p>
+            <p>📅 Easy Appointment Booking</p>
+            <p>💳 Secure Payment</p>
+        </div>
+    </div>
+
+    <div class="login-card">
+
+        <h2>Welcome Back!</h2>
+        <p class="subtitle">Login to book your appointment</p>
+
+        <label>Username</label>
+        <input type="text" placeholder="Enter your username">
+
+        <label>Password</label>
+        <input type="password" placeholder="Enter your password">
+
+        <button onclick="login()">Login</button>
+
+        <p class="bottom-text">
+            Need help? Contact Clinic Reception
+        </p>
+
+    </div>
+
+</div>
+
+<script>
+function login() {
+
+    let username = document.querySelector("input[type='text']").value;
+    let password = document.querySelector("input[type='password']").value;
+
+    if (username === "" || password === "") {
+        alert("Please enter username and password");
+    } 
+    else {
+        window.location.href = "patient.html";
+    }
+}
+</script>
+
+</body>
+</html>

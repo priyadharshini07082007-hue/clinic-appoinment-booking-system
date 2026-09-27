@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #eef8f8;
+}
+
+.page {
+    width: 90%;
+    max-width: 1000px;
+    margin: 50px auto;
+}
+
+header {
+    background: #087f8c;
+    color: white;
+    padding: 25px 35px;
+    border-radius: 15px 15px 0 0;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: white;
+    color: #087f8c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+}
+
+.brand h1 {
+    margin: 0;
+}
+
+.brand p {
+    margin: 5px 0;
+}
+
+.success {
+    background: #dff6e5;
+    color: #237a3b;
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.card {
+    background: white;
+    padding: 40px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.1);
+}
+
+.card h2 {
+    color: #174a5b;
+    margin-bottom: 30px;
+}
+
+.details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.details div {
+    background: #f5fafb;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.details span {
+    display: block;
+    color: #777;
+    margin-bottom: 8px;
+}
+
+.details strong {
+    color: #174a5b;
+    font-size: 17px;
+}
+
+.paid {
+    color: #218838 !important;
+}
+
+.actions {
+    text-align: center;
+    margin-top: 35px;
+}
+
+button {
+    padding: 14px 30px;
+    border: none;
+    border-radius: 8px;
+    background: #087f8c;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #777;
+}

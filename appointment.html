@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Details - CarePlus Clinic</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #eef8f9;
+            color: #164b68;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+        }
+
+        /* HEADER */
+        .header {
+            background: #078899;
+            color: white;
+            padding: 24px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .logo {
+            width: 62px;
+            height: 62px;
+            border-radius: 50%;
+            background: white;
+            color: #078899;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+        }
+
+        .logo-text h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        .logo-text p {
+            margin: 4px 0 0;
+            font-size: 20px;
+        }
+
+        .step-badge {
+            background: white;
+            color: #078899;
+            padding: 14px 28px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* STEPS */
+        .steps {
+            display: flex;
+            justify-content: space-around;
+            padding: 25px 35px;
+            background: #fff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .step {
+            text-align: center;
+            color: #aaa;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .step-number {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .step.active {
+            color: #078899;
+        }
+
+        .step.completed {
+            color: #078899;
+        }
+
+        /* CONTENT */
+        .content {
+            padding: 70px 60px;
+        }
+
+        .content h2 {
+            font-size: 34px;
+            margin-bottom: 10px;
+            color: #164b68;
+        }
+
+        .subtitle {
+            color: #777;
+            font-size: 19px;
+            margin-bottom: 40px;
+        }
+
+        .appointment-card {
+            max-width: 850px;
+            margin: auto;
+            border: 1px solid #d7e4e7;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.06);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #164b68;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 14px;
+            border: 1px solid #ccdadd;
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #078899;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 5px;
+            color: #078899;
+            font-size: 17px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .continue-btn {
+            width: 100%;
+            margin-top: 30px;
+            padding: 16px;
+            border: none;
+            border-radius: 9px;
+            background: #078899;
+            color: white;
+            font-size: 19px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .continue-btn:hover {
+            background: #067684;
+        }
+
+        @media (max-width: 700px) {
+            .header {
+                padding: 20px;
+            }
+
+            .logo-text h1 {
+                font-size: 24px;
+            }
+
+            .logo-text p {
+                font-size: 15px;
+            }
+
+            .step-badge {
+                padding: 10px 15px;
+                font-size: 14px;
+            }
+
+            .content {
+                padding: 40px 20px;
+            }
+
+            .appointment-card {
+                padding: 25px;
+            }
+
+            .steps {
+                padding: 20px 5px;
+            }
+
+            .step {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <div class="logo-area">
+
+            <div class="logo">
+                ⚕
+            </div>
+
+            <div class="logo-text">
+                <h1>CarePlus Clinic</h1>
+                <p>Clinic Appointment Booking System</p>
+            </div>
+
+        </div>
+
+        <div class="step-badge">
+            Step 3 of 5
+        </div>
+
+    </header>
+
+
+    <!-- PROGRESS STEPS -->
+    <div class="steps">
+
+        <div class="step completed">
+            <div class="step-number">✓</div>
+            <div>Patient</div>
+        </div>
+
+        <div class="step completed">
+            <div class="step-number">✓</div>
+            <div>Doctor</div>
+        </div>
+
+        <div class="step active">
+            <div class="step-number">3</div>
+            <div>Appointment</div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">4</div>
+            <div>Payment</div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">5</div>
+            <div>Dashboard</div>
+        </div>
+
+    </div>
+
+
+    <!-- APPOINTMENT CONTENT -->
+    <main class="content">
+
+        <h2>Appointment Details</h2>
+
+        <p class="subtitle">
+            Select your preferred date, time slot, and reason for visit.
+        </p>
+
+
+        <div class="appointment-card">
+
+            <form action="payment.html" method="GET">
+
+                <div class="form-group">
+                    <label for="date">
+                        Preferred Date *
+                    </label>
+
+                    <input
+                        type="date"
+                        id="date"
+                        name="date"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="time">
+                        Preferred Time Slot *
+                    </label>
+
+                    <select id="time" name="time" required>
+                        <option value="">Select Time Slot</option>
+                        <option value="09:00 AM">09:00 AM</option>
+                        <option value="10:00 AM">10:00 AM</option>
+                        <option value="11:00 AM">11:00 AM</option>
+                        <option value="12:00 PM">12:00 PM</option>
+                        <option value="02:00 PM">02:00 PM</option>
+                        <option value="03:00 PM">03:00 PM</option>
+                        <option value="04:00 PM">04:00 PM</option>
+                        <option value="05:00 PM">05:00 PM</option>
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="consultation">
+                        Type of Consultation *
+                    </label>
+
+                    <select
+                        id="consultation"
+                        name="consultation"
+                        required
+                    >
+                        <option value="">Select Consultation Type</option>
+                        <option value="In-Person">In-Person</option>
+                        <option value="Online">Online</option>
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="reason">
+                        Reason for Visit / Symptoms
+                    </label>
+
+                    <textarea
+                        id="reason"
+                        name="reason"
+                        placeholder="Describe your health symptoms or reason for visit..."
+                    ></textarea>
+                </div>
+
+
+                <!-- BACK TO DOCTOR -->
+                <a href="doctor.html" class="back-link">
+                    ← Back to Doctor
+                </a>
+
+
+                <button type="submit" class="continue-btn">
+                    Continue to Payment →
+                </button>
+
+            </form>
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Details - CarePlus Clinic</title>
+    <link rel="stylesheet" href="patient.css">
+</head>
+
+<body>
+
+<div class="page">
+
+    <!-- Header -->
+    <header>
+        <div class="brand">
+            <div class="logo">⚕</div>
+            <div>
+                <h1>CarePlus Clinic</h1>
+                <p>Clinic Appointment Booking System</p>
+            </div>
+        </div>
+
+        <div class="step">
+            Step 1 of 5
+        </div>
+    </header>
+
+    <!-- Progress -->
+    <div class="progress">
+        <div class="active">1<br><span>Patient</span></div>
+        <div>2<br><span>Doctor</span></div>
+        <div>3<br><span>Appointment</span></div>
+        <div>4<br><span>Payment</span></div>
+        <div>5<br><span>Dashboard</span></div>
+    </div>
+
+    <!-- Form Card -->
+    <main class="card">
+
+        <h2>Patient Information</h2>
+
+        <p class="description">
+            Please enter the patient's details to continue.
+        </p>
+
+        <div class="form-grid">
+
+            <div class="field">
+                <label>Patient Name *</label>
+                <input type="text" id="name" placeholder="Enter patient name">
+            </div>
+
+            <div class="field">
+                <label>Age *</label>
+                <input type="number" id="age" placeholder="Enter age">
+            </div>
+
+            <div class="field">
+                <label>Gender *</label>
+                <select id="gender">
+                    <option value="">Select Gender</option>
+                    <option>Female</option>
+                    <option>Male</option>
+                    <option>Other</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label>Phone Number *</label>
+                <input type="tel" id="phone" placeholder="Enter phone number">
+            </div>
+
+            <div class="field">
+                <label>Email *</label>
+                <input type="email" id="email" placeholder="Enter email">
+            </div>
+
+            <div class="field">
+                <label>Blood Group</label>
+                <select id="blood">
+                    <option value="">Select Blood Group</option>
+                    <option>A+</option>
+                    <option>A-</option>
+                    <option>B+</option>
+                    <option>B-</option>
+                    <option>O+</option>
+                    <option>O-</option>
+                    <option>AB+</option>
+                    <option>AB-</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="field address">
+            <label>Address</label>
+            <textarea id="address" placeholder="Enter patient's address"></textarea>
+        </div>
+
+        <div class="actions">
+            <button class="next-btn" onclick="savePatient()">
+                Continue to Doctor →
+            </button>
+        </div>
+
+    </main>
+
+    <footer>
+        © 2026 CarePlus Clinic | Patient Module
+    </footer>
+
+</div>
+
+<script>
+
+async function savePatient() {
+
+    const name = document.getElementById("name").value;
+    const age = document.getElementById("age").value;
+    const gender = document.getElementById("gender").value;
+    const phone = document.getElementById("phone").value;
+    const email = document.getElementById("email").value;
+    const blood = document.getElementById("blood").value;
+    const address = document.getElementById("address").value;
+
+    if (!name || !age || !gender || !phone || !email) {
+        alert("Please fill all required fields.");
+        return;
+    }
+
+    try {
+
+        const response = await fetch("http://localhost:3000/patient", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name: name,
+                age: age,
+                gender: gender,
+                phone: phone,
+                email: email,
+                blood: blood,
+                address: address
+            })
+        });
+
+        const data = await response.json();
+
+        alert(data.message);
+
+        window.location.href = "doctor.html";
+
+    } catch (error) {
+
+        alert("Backend connection failed. Make sure the server is running.");
+
+        console.log(error);
+    }
+}
+
+</script>
+
+</body>
+</html>

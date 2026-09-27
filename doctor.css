@@ -1,0 +1,170 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #eef8f8;
+    color: #263238;
+}
+
+.page {
+    width: 90%;
+    max-width: 1100px;
+    margin: 35px auto;
+}
+
+header {
+    background: #087f8c;
+    color: white;
+    padding: 22px 30px;
+    border-radius: 15px 15px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: white;
+    color: #087f8c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
+
+.brand h1 {
+    margin: 0;
+}
+
+.brand p {
+    margin: 5px 0 0;
+}
+
+.step {
+    background: white;
+    color: #087f8c;
+    padding: 10px 18px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.progress {
+    background: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 18px;
+}
+
+.progress div {
+    text-align: center;
+    color: #aaa;
+    font-weight: bold;
+}
+
+.progress span {
+    display: block;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.progress .active,
+.progress .done {
+    color: #087f8c;
+}
+
+.card {
+    background: white;
+    padding: 40px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.1);
+}
+
+.card h2 {
+    color: #174a5b;
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.description {
+    color: #777;
+    margin-bottom: 30px;
+}
+
+.doctors {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.doctor-card {
+    border: 1px solid #d9e3e5;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    transition: .2s;
+}
+
+.doctor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,.12);
+}
+
+.doctor-icon {
+    font-size: 55px;
+}
+
+.doctor-card h3 {
+    color: #174a5b;
+    margin: 12px 0 5px;
+}
+
+.specialization {
+    color: #087f8c;
+    font-weight: bold;
+}
+
+.doctor-card p {
+    color: #666;
+}
+
+.doctor-card button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 7px;
+    background: #087f8c;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.doctor-card button:hover {
+    background: #05636d;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #777;
+}
+
+@media(max-width:800px) {
+    .doctors {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
