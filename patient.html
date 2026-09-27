@@ -111,9 +111,7 @@
 </div>
 
 <script>
-
-async function savePatient() {
-
+function savePatient() {
     const name = document.getElementById("name").value;
     const age = document.getElementById("age").value;
     const gender = document.getElementById("gender").value;
@@ -121,44 +119,20 @@ async function savePatient() {
     const email = document.getElementById("email").value;
     const blood = document.getElementById("blood").value;
     const address = document.getElementById("address").value;
-
     if (!name || !age || !gender || !phone || !email) {
         alert("Please fill all required fields.");
         return;
     }
-
-    try {
-
-        const response = await fetch("http://localhost:3000/patient", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                name: name,
-                age: age,
-                gender: gender,
-                phone: phone,
-                email: email,
-                blood: blood,
-                address: address
-            })
-        });
-
-        const data = await response.json();
-
-        alert(data.message);
-
-        window.location.href = "doctor.html";
-
-    } catch (error) {
-
-        alert("Backend connection failed. Make sure the server is running.");
-
-        console.log(error);
-    }
+    localStorage.setItem("patientName", name);
+    localStorage.setItem("patientAge", age);
+    localStorage.setItem("patientGender", gender);
+    localStorage.setItem("patientPhone", phone);
+    localStorage.setItem("patientEmail", email);
+    localStorage.setItem("patientBlood", blood);
+    localStorage.setItem("patientAddress", address);
+    alert("Patient details saved successfully!");
+    window.location.href = "doctor.html";
 }
-
 </script>
 
 </body>
