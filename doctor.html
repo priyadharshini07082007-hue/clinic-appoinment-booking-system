@@ -88,41 +88,13 @@
 </div>
 
 <script>
-
-async function selectDoctor(name, specialization, fee) {
-
-    try {
-
-        const response = await fetch("http://localhost:3000/doctor", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                doctorName: name,
-                specialization: specialization,
-                consultationFee: fee
-            })
-        });
-
-        const data = await response.json();
-
-        localStorage.setItem("doctorName", name);
-        localStorage.setItem("specialization", specialization);
-        localStorage.setItem("fee", fee);
-
-        alert(data.message);
-
-        window.location.href = "appointment.html";
-
-    } catch (error) {
-
-        alert("Backend connection failed.");
-
-        console.log(error);
-    }
+function selectDoctor(name, specialization, fee) {
+    localStorage.setItem("doctorName", name);
+    localStorage.setItem("specialization", specialization);
+    localStorage.setItem("fee", fee);
+    alert("Doctor selected successfully!");
+    window.location.href = "appointment.html";
 }
-
 </script>
 
 </body>
